@@ -1,4 +1,4 @@
-# {NOME DO REPOSITÓRIO}]
+# {NOME DO REPOSITÓRIO}
 ### Descrição
 - Protótipo do Trabalho de Análise e Projeto de Sistemas II
 
