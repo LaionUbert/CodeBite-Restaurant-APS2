@@ -1,4 +1,4 @@
-# {NOME DO REPOSITÓRIO}
+# CodeBite Restaurant
 ### Descrição
 - Protótipo do Trabalho de Análise e Projeto de Sistemas II
 
