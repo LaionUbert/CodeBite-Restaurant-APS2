@@ -85,6 +85,7 @@
 - **1.6.2. Suporte Técnico**
     - Contato para suporte técnico disponível em horários específicos, com canais de comunicação como e-mail ou chat online.
 
+
 # 2. **Manual de Utilização**
 
 ### 2.1 **Manual do Cliente**
