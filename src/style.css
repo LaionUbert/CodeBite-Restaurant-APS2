@@ -5,11 +5,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #000000;
 }
 
 header {
-    background-color: #f8f9fa;
+    background-color: #23c1dd;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
@@ -39,7 +39,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #007bff;
+    color: #23c1dd;
 }
 
 nav ul li a:hover {
@@ -57,7 +57,7 @@ main {
 
 .menu-item {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #23c1dd;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
@@ -98,7 +98,7 @@ main {
 }
 
 footer {
-    background-color: #f8f9fa;
+    background-color: #23c1dd;
     padding: 10px 0;
     border-top: 1px solid #ddd;
     text-align: center;
