@@ -1,5 +1,4 @@
-# DOCUMENTAÇÃO/MANUAL
-
+# DOCUMENTAÇÃO
 # Índice
 
 - [DOCUMENTAÇÃO/MANUAL](#documentaçãomanual)
