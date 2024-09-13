@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f4f4f4;
+}
+
+header {
+    background-color: #23c1dd;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.container nav ul li a {
+    color: #000000;
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #23c1dd;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    background-color: #060739;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    margin: 10px 0 5px;
+}
+
+.menu-item p {
+    margin: 0 0 10px;
+}
+
+.menu-item span {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.menu-item button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #23c1dd;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
