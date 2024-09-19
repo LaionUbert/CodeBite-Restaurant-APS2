@@ -5,7 +5,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center;
     color: #f4f4f4;
+}
+
+nav ul li a {
+    color: #f4f4f4; /* Cor do texto dos links "Menu", "Pedidos" e "Contato" */
 }
 
 #contact h2,
