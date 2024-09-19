@@ -10,7 +10,7 @@ body {
 }
 
 nav ul li a {
-    color: #f4f4f4; /* Cor do texto dos links "Menu", "Pedidos" e "Contato" */
+    color: #000000; /* Cor do texto dos links "Menu", "Pedidos" e "Contato" */
 }
 
 #contact h2,
