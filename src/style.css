@@ -8,13 +8,35 @@ body {
     color: #f4f4f4;
 }
 
+#contact h2 {
+    color: #141414; /* Cor do título */
+}
+
+#contact p {
+    color: #141414; /* Cor do parágrafo */
+}
+
+#contact a {
+    color: #0004ff; /* Cor do link (e-mail) */
+}
+
+.titulo h2 {
+    color: #141414; /* Altere para a cor que você desejar */
+}
+
+#order h2 {
+    color: #141414; /* Cor do título "Pedidos" */
+}
+
+#contact a:hover {
+    text-decoration: underline; /* Efeito ao passar o mouse sobre o link */
+}
+
 header {
     background-color: #23c1dd;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
-
-
 
 .container nav ul li a {
     color: #000000;
