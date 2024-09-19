@@ -47,6 +47,8 @@ header {
 
 header h1 {
     margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 nav ul {
@@ -55,15 +57,20 @@ nav ul {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 nav ul li {
     margin-right: 20px;
+    
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #23c1dd;
+    color: #000000;
+    
 }
 
 nav ul li a:hover {
