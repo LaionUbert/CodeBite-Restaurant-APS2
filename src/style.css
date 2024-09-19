@@ -8,7 +8,9 @@ body {
     color: #f4f4f4;
 }
 
-#contact h2 {
+#contact h2,
+.titulo h2,
+#order h2 {
     color: #141414; /* Cor do título */
 }
 
@@ -18,14 +20,6 @@ body {
 
 #contact a {
     color: #0004ff; /* Cor do link (e-mail) */
-}
-
-.titulo h2 {
-    color: #141414; /* Altere para a cor que você desejar */
-}
-
-#order h2 {
-    color: #141414; /* Cor do título "Pedidos" */
 }
 
 #contact a:hover {
@@ -38,16 +32,12 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.container nav ul li a {
-    color: #000000;
-}
-
-header .container {
+.container {
     width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
 header h1 {
@@ -59,6 +49,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -81,6 +72,7 @@ main {
 .menu-items {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .menu-item {
@@ -89,12 +81,15 @@ main {
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
-    width: calc(33.333% - 40px);
+    flex: 1 1 calc(33.333% - 20px); /* Tamanho responsivo */
+    max-width: calc(33.333% - 20px);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .menu-item img {
-    max-width: 100%;
+    width: 100%; /* Altera para ocupar toda a largura do contêiner */
+    height: 200px; /* Tamanho fixo para todas as imagens */
+    object-fit: cover; /* Mantém a proporção e corta as imagens, se necessário */
     border-radius: 5px;
 }
 
