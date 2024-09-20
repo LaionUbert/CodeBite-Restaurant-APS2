@@ -1,84 +1,89 @@
 interface MenuItem {
     name: string;
-    description: string;
     price: number;
-}
-
-interface OrderItem {
-    item: MenuItem;
     quantity: number;
 }
 
-class ShoppingCart {
-    private items: OrderItem[] = [];
+class Cart {
+    private items: MenuItem[] = [];
 
-    addItem(item: MenuItem, quantity: number): void {
-        const existingItem = this.items.find(orderItem => orderItem.item.name === item.name);
+    addItem(item: MenuItem) {
+        const existingItem = this.items.find(i => i.name === item.name);
         if (existingItem) {
-            existingItem.quantity += quantity;
+            existingItem.quantity += item.quantity;
         } else {
-            this.items.push({ item, quantity });
+            this.items.push(item);
         }
         this.updateOrderSummary();
     }
 
-    clearCart(): void {
+    clearCart() {
         this.items = [];
         this.updateOrderSummary();
     }
 
-    private updateOrderSummary(): void {
+    getSummary() {
+        return this.items;
+    }
+
+    private updateOrderSummary() {
         const orderSection = document.getElementById('order');
-        if (orderSection) {
-            orderSection.innerHTML = '<h2>Pedidos</h2>'; // Resetando a seção de pedidos
-            if (this.items.length === 0) {
-                orderSection.innerHTML += '<p>Carrinho vazio.</p>';
-            } else {
-                this.items.forEach(orderItem => {
-                    orderSection.innerHTML += `<p>${orderItem.item.name} - R$ ${orderItem.item.price.toFixed(2)} x ${orderItem.quantity}</p>`;
-                });
-                this.addCheckoutButtons(orderSection);
-            }
-        }
-    }
+        if (!orderSection) return;
 
-    private addCheckoutButtons(orderSection: HTMLElement): void {
-        orderSection.innerHTML += `
-            <button id="clear-cart">Limpar Carrinho</button>
-            <button id="buy">Comprar</button>
-        `;
+        // Limpa o conteúdo atual
+        orderSection.innerHTML = `<h2>Pedidos</h2>`;
         
-        document.getElementById('clear-cart')?.addEventListener('click', () => this.clearCart());
-        document.getElementById('buy')?.addEventListener('click', () => this.processPurchase());
-    }
-
-    private processPurchase(): void {
-        if (this.items.length > 0) {
-            alert('Compra realizada com sucesso!');
-            this.clearCart();
-        } else {
-            alert('Seu carrinho está vazio!');
+        if (this.items.length === 0) {
+            orderSection.innerHTML += `<p>Seu carrinho está vazio.</p>`;
+            return;
         }
+
+        const ul = document.createElement('ul');
+        this.items.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - R$ ${item.price.toFixed(2)} (Quantidade: ${item.quantity})`;
+            ul.appendChild(li);
+        });
+        
+        orderSection.appendChild(ul);
+
+        const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        orderSection.innerHTML += `<p>Total: R$ ${total.toFixed(2)}</p>`;
+
+        // Adiciona botões de ação
+        const clearButton = document.createElement('button');
+        clearButton.textContent = 'Limpar Carrinho';
+        clearButton.onclick = () => this.clearCart();
+        
+        const buyButton = document.createElement('button');
+        buyButton.textContent = 'Comprar';
+        buyButton.onclick = () => alert('Compra realizada com sucesso!');
+
+        orderSection.appendChild(clearButton);
+        orderSection.appendChild(buyButton);
     }
 }
 
-const cart = new ShoppingCart();
+// Instância do carrinho
+const cart = new Cart();
 
-// Adicionando funcionalidade aos botões "Adicionar ao Carrinho"
-const addButtons = document.querySelectorAll('.menu-item button');
-addButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        const menuItemDiv = (event.target as HTMLElement).closest('.menu-item');
-        const name = menuItemDiv?.querySelector('h3')?.textContent;
-        const description = menuItemDiv?.querySelector('p')?.textContent;
-        const priceText = menuItemDiv?.querySelector('span')?.textContent;
+// Função para adicionar itens ao carrinho
+function setupMenu() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        const button = item.querySelector('button');
+        if (button) {
+            button.onclick = () => {
+                const name = item.querySelector('h3')?.textContent || '';
+                const priceText = item.querySelector('span')?.textContent || 'R$ 0,00';
+                const price = parseFloat(priceText.replace('R$ ', '').replace(',', '.'));
+                const quantity = 1; // ou você pode modificar para permitir escolha de quantidade
 
-        const priceMatch = priceText?.match(/R\$\s*(\d+,\d+)/);
-        const price = priceMatch ? parseFloat(priceMatch[1].replace(',', '.')) : 0;
-
-        if (name) {
-            const menuItem: MenuItem = { name, description: description || '', price };
-            cart.addItem(menuItem, 1); // Adicionando 1 unidade
+                cart.addItem({ name, price, quantity });
+            };
         }
     });
-});
+}
+
+// Configuração inicial
+document.addEventListener('DOMContentLoaded', setupMenu);

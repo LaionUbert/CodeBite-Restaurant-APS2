@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>CodeBite Restaurant</title>
-    <script src="ts/ts.ts"></script>
+    <script src="ts/ts.js" defer></script>
 </head>
 <body>
     <header>
@@ -154,8 +154,11 @@
 
         <section id="order">
             <h2>Pedidos</h2>
-            <!-- Aqui pode ser adicionado um componente de acompanhamento de pedidos BACKEND LAION -->
+            <div id="order-summary">
+                <p>Carrinho vazio.</p>
+            </div>
         </section>
+
 
         <section id="contact">
             <h2>Contato</h2>
