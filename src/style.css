@@ -32,10 +32,12 @@ nav ul li a {
 }
 
 header {
-    background-color: #23c1dd;
+    background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%); /* Gradiente suave entre as duas cores */
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    border-radius: 8px; /* Bordas arredondadas */
 }
+
 
 .container {
     width: 80%;
@@ -57,24 +59,34 @@ nav ul {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    display: flex;
     justify-content: center;
     text-align: center;
 }
 
 nav ul li {
     margin-right: 20px;
-    
 }
 
 nav ul li a {
+    display: block; /* Mantém o link como um bloco */
+    color: #ffffff; /* Cor clara para o texto */
+    text-align: center;
+    padding: 15px 11.9px; /* Espaçamento interno */
     text-decoration: none;
-    color: #000000;
-    
+    background-color: #0000003f; /* Cor de fundo padrão para o link */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #14a1b9; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Altera a cor do texto */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+nav ul li a:active {
+    transform: scale(0.95); /* Reduz o tamanho ao clicar */
+    background-color: #e0e0e0; /* Cor de fundo ao clicar */
 }
 
 main {
