@@ -1,7 +1,7 @@
 # DOCUMENTAÇÃO
 # Índice
 
-- [**DOCUMENTAÇÃO/MANUAL**](#documentaçãomanual)
+- [**DOCUMENTAÇÃO**](#documentação)
 - [**Índice**](#índice)
 - [1. **Documentação do Software**](#1-documentação-do-software)
     - [1.1. **Introdução**](#11-introdução)
