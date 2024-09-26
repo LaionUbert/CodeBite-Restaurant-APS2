@@ -78,7 +78,7 @@ nav ul li a {
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições */
 }
 
-nav ul li a:hover {
+nav ul li a:hover { 
     background-color: #14a1b9; /* Cor de fundo ao passar o mouse */
     color: #ffffff; /* Altera a cor do texto */
     transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
