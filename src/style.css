@@ -1,157 +1,204 @@
 @charset "UTF-8";
 
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
-    color: #f4f4f4;
+    box-sizing: border-box;
 }
 
-nav ul li a {
-    color: #000000; /* Cor do texto dos links "Menu", "Pedidos" e "Contato" */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-#contact h2,
-.titulo h2,
-#order h2 {
-    color: #141414; /* Cor do título */
-}
-
-#contact p {
-    color: #141414; /* Cor do parágrafo */
-}
-
-#contact a {
-    color: #0004ff; /* Cor do link (e-mail) */
-}
-
-#contact a:hover {
-    text-decoration: underline; /* Efeito ao passar o mouse sobre o link */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
-    background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%); /* Gradiente suave entre as duas cores */
-    padding: 10px 0;
+    background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%);
+    color: #fff;
+    padding: 20px 0;
     border-bottom: 1px solid #ddd;
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 8px;
 }
 
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Adiciona uma margem inferior para separar do nav */
 }
 
-header h1 {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+nav {
+    margin-bottom: 20px; /* Espaçamento entre nav e h1 */
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
+    list-style: none;
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
 }
 
 nav ul li a {
-    display: block; /* Mantém o link como um bloco */
-    color: #ffffff; /* Cor clara para o texto */
-    text-align: center;
-    padding: 15px 11.9px; /* Espaçamento interno */
+    color: #fff;
     text-decoration: none;
-    background-color: #0000003f; /* Cor de fundo padrão para o link */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições */
+    padding: 15px;
+    background-color: #0000003f;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #14a1b9; /* Cor de fundo ao passar o mouse */
-    color: #ffffff; /* Altera a cor do texto */
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-}
-
-nav ul li a:active {
-    transform: scale(0.95); /* Reduz o tamanho ao clicar */
-    background-color: #e0e0e0; /* Cor de fundo ao clicar */
+    background-color: #14a1b9;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 main {
     padding: 20px;
 }
 
+section {
+    margin-bottom: 40px;
+}
+
 .menu-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
 }
 
 .menu-item {
     background-color: #060739;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
     border: 1px solid #f4f4f4;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    flex: 1 1 calc(33.333% - 20px); /* Tamanho responsivo */
-    max-width: calc(33.333% - 20px);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .menu-item img {
-    width: 100%; /* Altera para ocupar toda a largura do contêiner */
-    height: 200px; /* Tamanho fixo para todas as imagens */
-    object-fit: cover; /* Mantém a proporção e corta as imagens, se necessário */
-    border-radius: 5px;
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .menu-item h3 {
-    margin: 10px 0 5px;
+    margin: 10px 0;
+    color: #f4f4f4;
 }
 
 .menu-item p {
-    margin: 0 0 10px;
+    font-size: 14px;
+    color: #bbbbbb;
 }
 
 .menu-item span {
     display: block;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #ffffff;
 }
 
-.menu-item button {
+button {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.menu-item button:hover {
+button:hover {
     background-color: #0056b3;
+}
+
+/* Centralização do título do menu */
+#menu {
+    text-align: center;
+    margin-bottom: 40px; 
+}
+
+#order, #contact {
+    background-color: #fff;
+    padding: 40px 20px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+#order h2, #contact h2 {
+    color: #141414;
+}
+
+#order form, #contact p {
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+#order form label, #order form input, #order form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#order form input, #order form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 footer {
     background-color: #23c1dd;
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
-footer .container {
-    width: 80%;
-    margin: 0 auto;
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .menu-item {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-item {
+        max-width: 100%;
+    }
 }

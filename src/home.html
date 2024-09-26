@@ -150,26 +150,39 @@
                     <button>Adicionar ao Carrinho</button>
                 </div>
             </div>
-        </section>
-
-        <section id="order">
-            <h2>Pedidos</h2>
-            <div id="order-summary">
-                <p>Carrinho vazio.</p>
-            </div>
-        </section>
-
-
-        <section id="contact">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco por e-mail: <a href="mailto:cleancode@contato.com">cleancode@contato.com</a> ou telefone: 4002-8922.</p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
         </div>
-    </footer>
+    </section>
+
+    <section id="order">
+        <div class="titulo"><h2>Faça Seu Pedido</h2></div>
+        <form action="/pedido" method="post" class="order-form">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="endereco">Endereço de Entrega:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="telefone">Telefone para Contato:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="pedido">Seu Pedido:</label>
+            <textarea id="pedido" name="pedido" rows="4" required></textarea>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <div class="titulo"><h2>Contato</h2></div>
+        <p><br><br>Entre em contato conosco pelo telefone 4002-8922 ou pelo e-mail <a href="mailto:contato@codebiterestaurant.com">contato@codebiterestaurant.com</a></p>
+        <p><br>Endereço: Rua Exemplo, 123 - Centro, São Paulo, SP</p>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
+    </div>
+</footer>
 </body>
 </html>
