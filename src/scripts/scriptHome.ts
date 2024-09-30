@@ -130,22 +130,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Botão "Realizar Pedido"
   const placeOrderButton = document.getElementById('place-order');
   if (placeOrderButton) {
-      placeOrderButton.addEventListener('click', (event) => {
-          event.preventDefault();
-          if (cart['items'].length === 0) {
-              alert('Seu carrinho está vazio!');
-              return;
-          }
-  
-          // Salvar dados no localStorage
-          localStorage.setItem('orderData', JSON.stringify({
-              items: cart['items'],
-              // Adicione aqui outros dados que você quiser salvar
-          }));
-  
-          // Redirecionar para a página de entrega
-          window.location.href = '/src/paginas/pagamento.html';
-      });
+    placeOrderButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (cart.getItems().length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+      }
+
+      // Captura os dados do cliente
+      const customerName = (document.getElementById('customer-name') as HTMLInputElement).value;
+      const customerAddress = (document.getElementById('customer-address') as HTMLInputElement).value;
+
+      if (!customerName || !customerAddress) {
+        alert('Por favor, preencha todos os campos de informações do cliente.');
+        return;
+      }
+
+      // Salvar dados no localStorage
+      localStorage.setItem('orderData', JSON.stringify({
+        items: cart.getItems(),
+        customer: {
+          name: customerName,
+          address: customerAddress
+        }
+      }));
+
+      // Redirecionar para a página de pagamento
+      window.location.href = '/src/paginas/pagamento.html';
+    });
   }
-  
 });
