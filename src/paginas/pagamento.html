@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css">
-    <script src="scripts/scriptEntrega.js" defer></script>
+    <script src="/scripts/scriptEntrega.js" defer></script>
     <title>Pagamento</title>
 </head>
+
 <body>
     <header>
         <div class="container">
             <h1>Seja bem-vindo ao CodeBite Restaurant!</h1>
             <nav>
                 <ul>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#order">Pedidos</a></li>
+                    <li><a href="/src/home.html">Menu</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Resumo do pedido -->
-    <div id="order-summary"></div>
+    <main>
+        <!-- Resumo do pedido -->
+        <div id="order-summary"></div>
 
-    <!-- Botões de ação -->
-    <button id="clear-cart">Limpar Carrinho</button>
-    <button id="place-order">Realizar Pedido</button>
+        <!-- Botões de ação -->
+        <button id="clear-cart">Limpar Carrinho</button>
+        <button id="place-order">Realizar Pedido</button>
 
-    <!-- Link para o arquivo JavaScript externo -->
-    <script src="/src/scripts/scriptHome.js"></script>
+
+        <br>
+
+        <br>
+
+        <section id="contact">
+            <div class="titulo">
+                <h2>Contato</h2>
+            </div>
+            <p><br><br>Entre em contato conosco pelo telefone 4002-8922 ou pelo e-mail <a
+                    href="mailto:contato@codebiterestaurant.com">contato@codebiterestaurant.com</a></p>
+            <p><br>Endereço: Rua Exemplo, 123 - Centro, São Paulo, SP</p>
+        </section>
+    </main>
+
 </body>
 </html>

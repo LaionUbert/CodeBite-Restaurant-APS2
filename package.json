@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "trabalho-aps-ii": "file:"
   }
 }

@@ -130,19 +130,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Botão "Realizar Pedido"
   const placeOrderButton = document.getElementById('place-order');
   if (placeOrderButton) {
-    placeOrderButton.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      if (cart.getItems().length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-      }
-
-      // Salva o carrinho no sessionStorage
-      sessionStorage.setItem('cartItems', JSON.stringify(cart.getItems()));
-
-      // Redireciona para a página de entrega
-      window.location.href = 'paginas/pagamento.html';
-    });
+      placeOrderButton.addEventListener('click', (event) => {
+          event.preventDefault();
+          if (cart['items'].length === 0) {
+              alert('Seu carrinho está vazio!');
+              return;
+          }
+  
+          // Salvar dados no localStorage
+          localStorage.setItem('orderData', JSON.stringify({
+              items: cart['items'],
+              // Adicione aqui outros dados que você quiser salvar
+          }));
+  
+          // Redirecionar para a página de entrega
+          window.location.href = '/src/paginas/pagamento.html';
+      });
   }
+  
 });
