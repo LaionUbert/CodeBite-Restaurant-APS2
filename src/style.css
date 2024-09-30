@@ -11,6 +11,11 @@ body {
     background-color: #f4f4f4;
 }
 
+html, body {
+    overflow: auto;
+    height: auto;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -23,16 +28,15 @@ header {
     color: #fff;
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
-    border-radius: 8px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px; /* Adiciona uma margem inferior para separar do nav */
+    margin-bottom: 20px;
 }
 
 nav {
-    margin-bottom: 20px; /* Espaçamento entre nav e h1 */
+    margin-bottom: 20px;
 }
 
 nav ul {
@@ -126,7 +130,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Centralização do título do menu */
 #menu {
     text-align: center;
     margin-bottom: 40px; 
@@ -201,4 +204,54 @@ footer nav ul li a {
     .menu-item {
         max-width: 100%;
     }
+}
+
+#order-summary {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#order-summary li {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#order-total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#clear-cart {
+    background-color: #dc3545;
+    color: #fff;
+    margin-right: 10px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#clear-cart:hover {
+    background-color: #c82333;
+}
+
+#place-order {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#place-order:hover {
+    background-color: #218838;
 }
