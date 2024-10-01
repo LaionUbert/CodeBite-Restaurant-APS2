@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>CodeBite Restaurant</title>
     <script src="scripts/scriptHome.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -20,17 +22,20 @@
             </nav>
         </div>
     </header>
-    
+
     <main>
         <section id="menu">
-            <div class="titulo"><h2>Menu</h2></div>
+            <div class="titulo">
+                <h2>Menu</h2>
+            </div>
             <br>
             <div class="menu-items">
                 <!-- Entradas -->
                 <div class="menu-item">
                     <img src="/src/imagens/img_tacos.jpg" alt="Tacos de Frango ao Estilo Mexicano">
                     <h3>Tacos de Frango ao Estilo Mexicano</h3>
-                    <p>Tortilhas de milho recheadas com frango temperado, cebola roxa, coentro fresco e um toque de limão. Acompanha molho picante.</p>
+                    <p>Tortilhas de milho recheadas com frango temperado, cebola roxa, coentro fresco e um toque de
+                        limão. Acompanha molho picante.</p>
                     <span>R$ 22,00 (3 Unidades)</span>
                     <button>Adicionar ao Carrinho</button>
                 </div>
@@ -62,7 +67,8 @@
                 <div class="menu-item">
                     <img src="/src/imagens/img_macarrao.jpg" alt="Macarrão com queijo">
                     <h3>Macarrão com queijo</h3>
-                    <p>Espaguete de macarrão com massa feita no restaurante, queijo parmesão e molho de tomate e tempero da casa</p>
+                    <p>Espaguete de macarrão com massa feita no restaurante, queijo parmesão e molho de tomate e tempero
+                        da casa</p>
                     <span>R$ 26,00 (200gr)</span>
                     <button>Adicionar ao Carrinho</button>
                 </div>
@@ -151,43 +157,49 @@
                     <button>Adicionar ao Carrinho</button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="order">
-        <div class="titulo"><h2>Faça Seu Pedido</h2></div>
-        <br>
-        <form action="/pedido" method="post" class="order-form">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="endereco">Endereço de Entrega:</label>
-            <input type="text" id="endereco" name="endereco" required>
-
-            <label for="telefone">Telefone para Contato:</label>
-            <input type="tel" id="telefone" name="telefone" required>
-
-            <label for="pedido">Seu Pedido:</label>
-            <div id="order-summary">
-                <p id="order-total">Carrinho vazio.</p>
             </div>
-            <button id="clear-cart">Limpar Carrinho</button>
-            <button id="place-order">Realizar Pedido</button>  
-        
-        </form>
-    </section>
+        </section>
 
-    <section id="contact">
-        <div class="titulo"><h2>Contato</h2></div>
-        <p><br><br>Entre em contato conosco pelo telefone 4002-8922 ou pelo e-mail <a href="mailto:contato@codebiterestaurant.com">contato@codebiterestaurant.com</a></p>
-        <p><br>Endereço: Rua Exemplo, 123 - Centro, São Paulo, SP</p>
-    </section>
-</main>
+        <section id="order">
+            <div class="titulo">
+                <h2>Faça Seu Pedido</h2>
+            </div>
+            <br>
+            <form action="/pedido" method="post" class="order-form">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
-    </div>
-</footer>
+                <label for="endereco">Endereço de Entrega:</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <label for="telefone">Telefone para Contato:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <label for="pedido">Seu Pedido:</label>
+                <div id="order-summary">
+                    <p id="order-total">Carrinho vazio.</p>
+                </div>
+                <button id="clear-cart">Limpar Carrinho</button>
+                <button id="place-order">Realizar Pedido</button>
+
+            </form>
+        </section>
+
+        <section id="contact">
+            <div class="titulo">
+                <h2>Contato</h2>
+            </div>
+            <p><br><br>Entre em contato conosco pelo telefone 4002-8922 ou pelo e-mail <a
+                    href="mailto:contato@codebiterestaurant.com">contato@codebiterestaurant.com</a></p>
+            <p><br>Endereço: Rua Exemplo, 123 - Centro, São Paulo, SP</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -11,7 +11,8 @@ body {
     background-color: #f4f4f4;
 }
 
-html, body {
+html,
+body {
     overflow: auto;
     height: auto;
 }
@@ -132,33 +133,39 @@ button:hover {
 
 #menu {
     text-align: center;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
 
-#order, #contact {
+#order,
+#contact {
     background-color: #fff;
-    padding: 40px 20px; 
+    padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; 
+    text-align: center;
 }
 
-#order h2, #contact h2 {
+#order h2,
+#contact h2 {
     color: #141414;
 }
 
-#order form, #contact p {
+#order form,
+#contact p {
     max-width: 600px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
-#order form label, #order form input, #order form textarea {
+#order form label,
+#order form input,
+#order form textarea {
     display: block;
     width: 100%;
     margin-bottom: 15px;
 }
 
-#order form input, #order form textarea {
+#order form input,
+#order form textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
