@@ -2,7 +2,6 @@
 test/
 temp/
 build.bat
-tsconfig.json
 node_modules/
 .dist/
 server.js
