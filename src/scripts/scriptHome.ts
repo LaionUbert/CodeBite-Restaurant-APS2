@@ -18,7 +18,9 @@ class ShoppingCart {
   }
 
   addItem(item: CartItem) {
-    const existingItem = this.items.find(cartItem => cartItem.name === item.name);
+    const existingItem = this.items.find(
+      (cartItem) => cartItem.name === item.name
+    );
     if (existingItem) {
       existingItem.quantity += item.quantity;
     } else {
@@ -41,7 +43,7 @@ class ShoppingCart {
     let summaryHTML = `<ul>`;
     let total = 0;
 
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       const itemTotal = item.price * item.quantity;
       total += itemTotal;
       summaryHTML += `
@@ -56,7 +58,9 @@ class ShoppingCart {
     });
 
     summaryHTML += `</ul>`;
-    summaryHTML += `<p id="order-total"><strong>Total: R$ ${total.toFixed(2)}</strong></p>`;
+    summaryHTML += `<p id="order-total"><strong>Total: R$ ${total.toFixed(
+      2
+    )}</strong></p>`;
     this.orderSummaryElement.innerHTML = summaryHTML;
   }
 
@@ -67,30 +71,34 @@ class ShoppingCart {
 
 // Função para formatar o preço string para número
 function parsePrice(priceString: string): number {
-  const cleaned = priceString.replace('R$', '').replace('.', '').replace(',', '.').trim();
+  const cleaned = priceString
+    .replace("R$", "")
+    .replace(".", "")
+    .replace(",", ".")
+    .trim();
   return parseFloat(cleaned);
 }
 
 // Inicialização após o DOM estar carregado
-document.addEventListener('DOMContentLoaded', () => {
-  const cart = new ShoppingCart('order-summary');
+document.addEventListener("DOMContentLoaded", () => {
+  const cart = new ShoppingCart("order-summary");
 
   // Adicionar item ao carrinho ao clicar no botão
-  const addToCartButtons = document.querySelectorAll('.menu-item button');
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
+  const addToCartButtons = document.querySelectorAll(".menu-item button");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
       event.preventDefault();
 
-      const menuItem = (button.closest('.menu-item') as HTMLElement);
+      const menuItem = button.closest(".menu-item") as HTMLElement;
       if (!menuItem) return;
 
-      const nameElement = menuItem.querySelector('h3');
-      const priceElement = menuItem.querySelector('span');
+      const nameElement = menuItem.querySelector("h3");
+      const priceElement = menuItem.querySelector("span");
 
       if (!nameElement || !priceElement) return;
 
-      const name = nameElement.textContent?.trim() || 'Item sem nome';
-      const priceText = priceElement.textContent || 'R$ 0,00';
+      const name = nameElement.textContent?.trim() || "Item sem nome";
+      const priceText = priceElement.textContent || "R$ 0,00";
       const price = parsePrice(priceText);
 
       const quantity = 1; // Assume quantity as 1 for now
@@ -98,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const item: CartItem = {
         name,
         price,
-        quantity
+        quantity,
       };
 
       cart.addItem(item);
@@ -106,31 +114,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Botão "Limpar Carrinho"
-  const clearCartButton = document.getElementById('clear-cart');
+  const clearCartButton = document.getElementById("clear-cart");
   if (clearCartButton) {
-    clearCartButton.addEventListener('click', (event) => {
+    clearCartButton.addEventListener("click", (event) => {
       event.preventDefault();
       cart.clearCart();
     });
   }
 
   // Botão "Finalizar Pedido"
-  const placeOrderButton = document.getElementById('place-order');
+  const placeOrderButton = document.getElementById("place-order");
   if (placeOrderButton) {
-    placeOrderButton.addEventListener('click', (event) => {
+    placeOrderButton.addEventListener("click", (event) => {
       event.preventDefault();
 
       const items = cart.getItems();
       if (items.length === 0) {
-        alert('Seu carrinho está vazio!');
+        alert("Seu carrinho está vazio!");
         return;
       }
 
       // Salvar os dados do pedido no localStorage
-      localStorage.setItem('orderData', JSON.stringify(items));
+      localStorage.setItem("orderData", JSON.stringify(items));
 
       // Redirecionar para a página de pagamento
-      window.location.href = '/src/paginas/pagamento.html';
+      window.location.href = "/src/paginas/pagamento.html";
     });
   }
 });
