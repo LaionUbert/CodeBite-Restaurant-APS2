@@ -381,3 +381,32 @@ form#payment-form div {
     background-color: #28a745;
     /* Cor verde quando selecionado */
 }
+
+/* Estilo das informações do cliente */
+#customer-info {
+    background-color: #fff; /* Fundo branco */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    line-height: 1.8; /* Aumento do espaçamento entre linhas */
+}
+
+#customer-info p {
+    font-size: 16px;
+    color: #333;
+}
+
+#delivery-status {
+    background-color: #fff; /* Fundo branco */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    line-height: 1.8; /* Aumento do espaçamento entre linhas */
+}
+
+#delivery-status p {
+    font-size: 16px;
+    color: #333;
+}

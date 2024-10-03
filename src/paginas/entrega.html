@@ -17,17 +17,36 @@
     </header>
 
     <main>
-
-        <!--CONTEUDO-->
-
-        <section id="contact">
+        <!-- Seção com informações do cliente -->
+        <section id="customer-info">
             <div class="titulo">
-                <h2>Contato</h2>
+                <h2>Informações do Cliente</h2>
             </div>
-            <p><br><br>Entre em contato conosco pelo telefone 4002-8922 ou pelo e-mail <a
-                    href="mailto:contato@codebiterestaurant.com">contato@codebiterestaurant.com</a></p>
-            <p><br>Endereço: Rua Exemplo, 123 - Centro, São Paulo, SP</p>
+            <p><strong>Nome:</strong> <span id="customer-name"></span></p>
+            <p><strong>Endereço de Entrega:</strong> <span id="customer-address"></span></p>
+            <p><strong>Número de Telefone:</strong> <span id="customer-phone"></span></p>
+            <p><strong>Método de Pagamento:</strong> <span id="payment-method"></span></p>
         </section>
+
+        <!-- Resumo do Pedido -->
+        <section id="order-summary">
+            <div class="titulo">
+                <h2>Resumo do Pedido</h2>
+            </div>
+            <!-- O conteúdo do resumo do pedido será carregado pelo script -->
+        </section>
+
+        <!-- Status da Entrega -->
+        <section id="delivery-status">
+            <h2>Status da Entrega</h2>
+            <div class="status-options">
+                <div class="status-box">Em Preparo</div>
+                <div class="status-box">Em Rota</div>
+                <div class="status-box">Entregue</div>
+            </div>
+        </section>
+
+
     </main>
 
     <footer>
