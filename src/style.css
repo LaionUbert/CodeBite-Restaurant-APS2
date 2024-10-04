@@ -298,7 +298,7 @@ form#payment-form input {
 /* Botões de limpar e realizar pedido */
 form#payment-form button {
     background-color: #007bff;
-    color: #fff;
+    color: #000000;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
