@@ -77,13 +77,33 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "/src/home.html"; // Redireciona para a página home
   });
 
-  // Botão "Realizar Pedido" - Salva os dados e redireciona para a página de entrega
+  // Função para redirecionar à página de entrega
+  function redirectToDeliveryPage(): void {
+    // Verificação de caminho seguro para redirecionamento
+    window.location.href = "/src/paginas/entrega.html";
+  }
+
+  // Botão "Realizar Pedido" - Salva os dados e chama a função de redirecionamento
   const placeOrderButton = document.getElementById("place-order");
   placeOrderButton?.addEventListener("click", () => {
-    const name = (document.getElementById("name") as HTMLInputElement).value;
-    const address = (document.getElementById("address") as HTMLInputElement)
-      .value;
-    const phone = (document.getElementById("phone") as HTMLInputElement).value;
+    const nameInput = document.getElementById("name") as HTMLInputElement | null;
+    const addressInput = document.getElementById("address") as HTMLInputElement | null;
+    const phoneInput = document.getElementById("phone") as HTMLInputElement | null;
+
+    if (!nameInput || !addressInput || !phoneInput) {
+      console.error("Element not found");
+      return;
+    }
+
+    const name = nameInput.value;
+    const address = addressInput.value;
+    const phone = phoneInput.value;
+
+    // Verificação básica se os campos estão preenchidos
+    if (!name || !address || !phone) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
 
     // Armazenar os dados no localStorage
     localStorage.setItem("customerName", name);
@@ -91,13 +111,17 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("customerPhone", phone);
 
     // Obter a opção de pagamento selecionada
-    const selectedPaymentMethod = Array.from(paymentMethodRadios).find(
-      (radio) => radio.checked
-    )?.value;
-    localStorage.setItem("paymentMethod", selectedPaymentMethod || "");
+    const selectedPaymentMethod = Array.from(paymentMethodRadios)
+      .find((radio) => (radio as HTMLInputElement).checked) as HTMLInputElement | undefined;
 
-    // Redirecionar para a página de entrega
-    window.location.href = "/src/paginas/entrega.html";
+    if (selectedPaymentMethod) {
+      localStorage.setItem("paymentMethod", selectedPaymentMethod.value);
+    } else {
+      localStorage.setItem("paymentMethod", "");
+    }
+
+    // Chamar a função para redirecionar
+    redirectToDeliveryPage();
   });
 
   // Carregar e exibir o resumo do pedido ao carregar a página

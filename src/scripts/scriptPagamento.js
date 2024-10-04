@@ -65,24 +65,45 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("orderData");
         window.location.href = "/src/home.html"; // Redireciona para a página home
     });
-    // Botão "Realizar Pedido" - Salva os dados e redireciona para a página de entrega
+    // Função para redirecionar à página de entrega
+    function redirectToDeliveryPage() {
+        // Verificação de caminho seguro para redirecionamento
+        window.location.href = "/src/paginas/entrega.html";
+    }
+    // Botão "Realizar Pedido" - Salva os dados e chama a função de redirecionamento
     const placeOrderButton = document.getElementById("place-order");
     placeOrderButton === null || placeOrderButton === void 0 ? void 0 : placeOrderButton.addEventListener("click", () => {
-        var _a;
-        const name = document.getElementById("name").value;
-        const address = document.getElementById("address")
-            .value;
-        const phone = document.getElementById("phone").value;
+        const nameInput = document.getElementById("nome-cliente");
+        const addressInput = document.getElementById("endereco-cliente");
+        const phoneInput = document.getElementById("telefone-cliente");
+        if (!nameInput || !addressInput || !phoneInput) {
+            console.error("Element not found");
+            return;
+        }
+        const name = nameInput.value;
+        const address = addressInput.value;
+        const phone = phoneInput.value;
+        // Verificação básica se os campos estão preenchidos
+        if (!name || !address || !phone) {
+            alert("Por favor, preencha todos os campos obrigatórios.");
+            return;
+        }
         // Armazenar os dados no localStorage
         localStorage.setItem("customerName", name);
         localStorage.setItem("customerAddress", address);
         localStorage.setItem("customerPhone", phone);
         // Obter a opção de pagamento selecionada
-        const selectedPaymentMethod = (_a = Array.from(paymentMethodRadios).find((radio) => radio.checked)) === null || _a === void 0 ? void 0 : _a.value;
-        localStorage.setItem("paymentMethod", selectedPaymentMethod || "");
-        // Redirecionar para a página de entrega
-        window.location.href = "/src/paginas/entrega.html";
+        const selectedPaymentMethod = Array.from(paymentMethodRadios)
+            .find((radio) => radio.checked);
+        if (selectedPaymentMethod) {
+            localStorage.setItem("paymentMethod", selectedPaymentMethod.value);
+        }
+        else {
+            localStorage.setItem("paymentMethod", "");
+        }
+        // Chamar a função para redirecionar
+        redirectToDeliveryPage();
     });
     // Carregar e exibir o resumo do pedido ao carregar a página
-    loadOrderSummary();
+    //loadOrderSummary();
 });
