@@ -8,7 +8,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('imagens/img_restaurante.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #f4f4f4; 
 }
 
 html,
@@ -138,16 +142,18 @@ button:hover {
 
 #order,
 #contact {
-    background-color: #fff;
-    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para aumentar a visibilidade do texto */
+    padding: 20px 10px; /* Alterado para layout original */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin: 0 auto; /* Centraliza */
+    width: 80%; /* Largura reduzida para layout original */
 }
 
 #order h2,
 #contact h2 {
-    color: #141414;
+    color: #ffffff; /* Cor mais clara para os títulos */
 }
 
 #order form,
@@ -213,7 +219,7 @@ footer nav ul li a {
     }
 }
 
-/*CSS do Carrinho*/
+/* CSS do Carrinho */
 #order-summary {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -264,7 +270,7 @@ footer nav ul li a {
     background-color: #218838;
 }
 
-/* Estilos para centralizar e padronizar o formulário da página de pagamento */
+/* Ajustes para o formulário da página de pagamento */
 form#payment-form {
     background-color: #fff;
     padding: 40px 20px;
@@ -305,7 +311,7 @@ form#payment-form button:hover {
     background-color: #0056b3;
 }
 
-/* Ajustes para o botão de limpar dados */
+/* Ajuste para o botão de limpar dados */
 form#payment-form button#clear-data {
     background-color: #dc3545;
 }
@@ -342,71 +348,35 @@ form#payment-form div {
 .payment-button {
     position: relative;
     display: inline-block;
-    background-color: #007BFF;
-    /* Cor padrão do botão */
+    background-color: #007BFF; /* Cor padrão do botão */
     color: white;
     padding: 15px 30px;
     font-size: 16px;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    border: none;
     transition: background-color 0.3s ease;
-    margin: 0 10px;
-    /* Adiciona margem ao redor de cada botão */
 }
 
 .payment-button:hover {
-    background-color: #0056b3;
-    /* Cor ao passar o mouse */
+    background-color: #0056b3; /* Cor do botão quando hover */
 }
 
-.payment-button input[type="radio"] {
-    display: none;
-    /* Esconde completamente o radio button */
+input[type="radio"] {
+    display: none; /* Esconde os botões de rádio padrão */
 }
 
-.payment-button input[type="radio"]:checked+.payment-button {
-    background-color: #28a745;
-    /* Cor verde do botão quando selecionado */
+input[type="radio"] + label {
+    display: inline-block;
+    background-color: #f0f0f0; /* Cor do botão */
+    color: #333; /* Cor do texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.payment-button:active {
-    background-color: #0056b3;
-    /* Cor ao clicar no botão */
-}
-
-/* Cor verde ao selecionar o método de pagamento */
-.payment-button input[type="radio"]:checked+label {
-    background-color: #28a745;
-    /* Cor verde quando selecionado */
-}
-
-/* Estilo das informações do cliente */
-#customer-info {
-    background-color: #fff; /* Fundo branco */
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    line-height: 1.8; /* Aumento do espaçamento entre linhas */
-}
-
-#customer-info p {
-    font-size: 16px;
-    color: #333;
-}
-
-#delivery-status {
-    background-color: #fff; /* Fundo branco */
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    line-height: 1.8; /* Aumento do espaçamento entre linhas */
-}
-
-#delivery-status p {
-    font-size: 16px;
-    color: #333;
+input[type="radio"]:checked + label {
+    background-color: #0056b3; /* Muda a cor do botão quando selecionado */
 }

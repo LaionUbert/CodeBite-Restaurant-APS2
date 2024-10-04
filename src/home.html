@@ -2,7 +2,7 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="scripts/scriptHome.js" defer></script>
@@ -152,44 +152,42 @@
                 <div class="menu-item">
                     <img src="/src/imagens/img_sucos.jpg" alt="Sucos Naturais">
                     <h3>Sucos Naturais</h3>
-                    <p>Variedade de sucos naturais, incluindo sabores como laranja, limão e guaraná.</p>
-                    <span>R$ 10,00</span>
+                    <p>Variedade de sucos naturais como Laranja, Limão e Abacaxi.</p>
+                    <span>R$ 12,00</span>
                     <button>Adicionar ao Carrinho</button>
                 </div>
             </div>
-            </div>
-        </section>
-
-        <section id="order">
-            <div class="titulo">
-                <h2>Faça Seu Pedido</h2>
-            </div>
-            <br>
-            <form action="/pedido" method="post" class="order-form">
-                <label for="pedido">Seu Pedido:</label>
-                <div id="order-summary">
-                    <p id="order-total">Carrinho vazio.</p>
-                </div>
-                <button id="clear-cart">Limpar Carrinho</button>
-                <button id="place-order">Realizar Pedido</button>
-
-            </form>
         </section>
 
         <section id="contact">
             <div class="titulo">
                 <h2>Contato</h2>
             </div>
-            <p><br><br>Entre em contato conosco pelo telefone 4002-8922 ou pelo e-mail <a
-                    href="mailto:contato@codebiterestaurant.com">contato@codebiterestaurant.com</a></p>
-            <p><br>Endereço: Rua Exemplo, 123 - Centro, São Paulo, SP</p>
+            <p>Entre em contato conosco!</p>
+            <form action="#">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="document.getElementById('name').value=''; document.getElementById('email').value=''; document.getElementById('message').value='';">Limpar</button>
+            </form>
+        </section>
+
+        <section id="order-summary">
+            <h2>Resumo do Pedido</h2>
+            <ul id="order-summary"></ul>
+            <h3 id="order-total">Total: R$ 0,00</h3>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
-        </div>
+        <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
     </footer>
 </body>
 
