@@ -80,15 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para redirecionar à página de entrega
   function redirectToDeliveryPage(): void {
     // Verificação de caminho seguro para redirecionamento
-    window.location.href = "/src/paginas/entrega.html";
+    window.location.replace('/src/paginas/entrega.html');
   }
 
   // Botão "Realizar Pedido" - Salva os dados e chama a função de redirecionamento
   const placeOrderButton = document.getElementById("place-order");
   placeOrderButton?.addEventListener("click", () => {
-    const nameInput = document.getElementById("name") as HTMLInputElement | null;
-    const addressInput = document.getElementById("address") as HTMLInputElement | null;
-    const phoneInput = document.getElementById("phone") as HTMLInputElement | null;
+    const nameInput = document.getElementById("nome-cliente") as HTMLInputElement | null;
+    const addressInput = document.getElementById("endereco-cliente") as HTMLInputElement | null;
+    const phoneInput = document.getElementById("telefone-cliente") as HTMLInputElement | null;
 
     if (!nameInput || !addressInput || !phoneInput) {
       console.error("Element not found");

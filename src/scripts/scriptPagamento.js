@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para redirecionar à página de entrega
     function redirectToDeliveryPage() {
         // Verificação de caminho seguro para redirecionamento
-        window.location.href = "/src/paginas/entrega.html";
+        window.location.replace('/src/paginas/entrega.html');
     }
     // Botão "Realizar Pedido" - Salva os dados e chama a função de redirecionamento
     const placeOrderButton = document.getElementById("place-order");
@@ -105,5 +105,5 @@ document.addEventListener("DOMContentLoaded", () => {
         redirectToDeliveryPage();
     });
     // Carregar e exibir o resumo do pedido ao carregar a página
-    //loadOrderSummary();
+    loadOrderSummary();
 });

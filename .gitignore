@@ -1,8 +1,9 @@
 .vscode/
 test/
 temp/
-build.bat
 node_modules/
 .dist/
-server.js
 staged/
+
+
+build.bat
