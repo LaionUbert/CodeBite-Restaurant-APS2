@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Salvar os dados do pedido no localStorage
             localStorage.setItem("orderData", JSON.stringify(items));
             // Redirecionar para a página de pagamento
-            window.location.href = "/src/paginas/pagamento.html";
+            window.location.href = "/src/pages/pagamento.html";
         });
     }
 });

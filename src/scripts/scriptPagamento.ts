@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para redirecionar à página de entrega
   function redirectToDeliveryPage(): void {
     // Verificação de caminho seguro para redirecionamento
-    window.location.replace('/src/paginas/entrega.html');
+    window.location.replace('/src/pages/entrega.html');
   }
 
   // Botão "Realizar Pedido" - Salva os dados e chama a função de redirecionamento
