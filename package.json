@@ -1,0 +1,23 @@
+{
+  "name": "trabalho-aps-ii",
+  "version": "1.0.0",
+  "description": "- [DOCUMENTAÇÃO/MANUAL](#documentaçãomanual)\r - [Índice](#índice)\r - [1. Documentação do Software](#1-documentação-do-software)\r     - [1.1. **Introdução**](#11-introdução)\r     - [1.2. **Visão Geral do Sistema**](#12-visão-geral-do-sistema)\r     - [1.3. **Funcionalidades**](#13-funcionalidades)\r     - [1.4. **Requisitos do Sistema**](#14-requisitos-do-sistema)\r     - [1.5. **Segurança**](#15-segurança)\r     - [1.6. **Manutenção e Suporte**](#16-manutenção-e-suporte)\r - [2. **Manual de Utilização**](#2-manual-de-utilização)\r     - [2.1 **Manual do Cliente**](#21-manual-do-cliente)\r     - [2.2 **Manual do Restaurante**](#22-manual-do-restaurante)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "trabalho-aps-ii": "file:"
+  }
+}

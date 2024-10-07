@@ -1,13 +1,71 @@
-<!--LAION: PAGINA PARA REALIZAÇÃO DE PAGAMENTO E FORMULÁRIO PARA ENTREGA DO PEDIDO-->
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/style.css">
+  <script src="/src/scripts/scriptPagamento.js" defer></script>
+  <title>Pagamento</title>
 </head>
+
 <body>
-    
+  <header>
+    <h1>Informações de Pagamento</h1>
+  </header>
+
+  <main>
+    <!-- Resumo dos Pedidos -->
+    <section id="order-summary">
+      <h2>Resumo do Pedido</h2>
+      <!-- Resumo gerado via JavaScript -->
+    </section>
+
+    <form id="payment-form">
+      <label for="nome-cliente">Nome Completo:</label>
+      <input type="text" id="nome-cliente" required>
+
+      <label for="endereco-cliente">Endereço:</label>
+      <input type="text" id="endereco-cliente" required>
+
+      <label for="telefone-cliente">Telefone para Contato:</label>
+      <input type="text" id="telefone-cliente" required>
+
+
+      <label for="payment-method">Método de Pagamento:</label>
+      <div id="payment-options" class="payment-options">
+        <label class="payment-button">
+          <input type="radio" name="payment-method" value="cartao" checked>
+          Cartão de Crédito
+        </label>
+        <label class="payment-button">
+          <input type="radio" name="payment-method" value="pix">
+          Pix
+        </label>
+      </div>
+      <!-- Informações do Cartão - Somente visível se "Cartão" for selecionado -->
+      <div id="card-info" style="display: block;">
+        <label for="card-number">Número do Cartão:</label>
+        <input type="text" id="card-number">
+        <label for="card-owner-cpf">CPF do Proprietário:</label>
+        <input type="text" id="card-owner-cpf">
+        <label for="card-owner-name">Nome do Proprietário:</label>
+        <input type="text" id="card-owner-name">
+        <label for="card-cvv">CVV:</label>
+        <input type="text" id="card-cvv">
+      </div>
+
+      <div id="pix-image" style="display: none; text-align: center;">
+        <img src="/src/images/img_pix.png" alt="Código Pix" style="width: 300px; height: 300px;">
+        <p id="pix-message" style="display: none;">Escaneie o código acima para realizar o pagamento</p>
+      </div>
+
+      <button type="button" id="clear-data">Limpar Dados</button>
+      <button type="button" id="clear-cart">Limpar Pedido</button>
+      <button type="submit" id="place-order">Realizar Pedido</button>
+    </form>
+
+  </main>
 </body>
+
 </html>

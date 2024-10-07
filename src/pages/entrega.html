@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <script src="/src/scripts/scriptEntrega.js" defer></script>
+    <title>Entrega</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>CodeBite Restaurant - Entrega</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/src/home.html">Menu Principal</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- Seção com informações do cliente -->
+        <section id="customer-info">
+            <div class="titulo">
+                <h2>Informações do Cliente</h2>
+            </div>
+            <p><strong>Nome:</strong> <span id="customer-name"></span></p>
+            <p><strong>Endereço de Entrega:</strong> <span id="customer-address"></span></p>
+            <p><strong>Número de Telefone:</strong> <span id="customer-phone"></span></p>
+            <p><strong>Método de Pagamento:</strong> <span id="payment-method"></span></p>
+        </section>
+
+        <!-- Resumo do Pedido -->
+        <section id="order-box">
+            <h2>Itens do Pedido</h2>
+            <section id="order-summary">
+                <div class="titulo">
+                    <h2>Resumo do Pedido</h2>
+                </div>
+                <!-- O conteúdo do resumo do pedido será carregado pelo script -->
+            </section>
+
+        </section>
+        <!-- Status da Entrega -->
+        <div id="delivery-status" class="status-container">
+            <h2>Status da Entrega</h2>
+            <div class="status-item">
+                <img src="/src/images/icons/ico_preparo.png" alt="Em Preparo" class="status-icon">
+                <span>Em Preparo</span>
+            </div>
+            <div class="status-item">
+                <img src="/src/images/icons/ico_delivery.png" alt="Em Rota" class="status-icon">
+                <span>Em Rota</span>
+            </div>
+            <div class="status-item">
+                <img src="/src/images/icons/ico_entregue.png" alt="Entregue" class="status-icon">
+                <span>Entregue</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CodeBite Restaurant. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
