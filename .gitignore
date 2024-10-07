@@ -2,8 +2,3 @@
 test/
 temp/
 node_modules/
-.dist/
-staged/
-
-
-build.bat

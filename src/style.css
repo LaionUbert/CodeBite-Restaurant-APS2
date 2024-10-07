@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Estilos Globais */
 * {
     margin: 0;
     padding: 0;
@@ -8,11 +9,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('imagens/img_restaurante.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; 
-    color: #f4f4f4; 
+    background-image: url('images/img_restaurante.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f4f4f4;
 }
 
 html,
@@ -28,15 +29,16 @@ body {
     padding: 20px;
 }
 
+/* Estilos do Header e Navbar */
 header {
     background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%);
     color: #fff;
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -48,12 +50,12 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem de linha */
 }
 
 nav ul li {
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 40px;
+    margin: 10px 20px;
 }
 
 nav ul li a {
@@ -69,6 +71,26 @@ nav ul li a:hover {
     background-color: #14a1b9;
     color: #ffffff;
     transform: scale(1.1);
+}
+
+/* Responsividade da Navbar */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        /* Organiza os itens em uma pilha */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        /* Margem entre os itens da pilha */
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        /* Reduz o tamanho do título em telas menores */
+    }
 }
 
 main {
@@ -142,18 +164,23 @@ button:hover {
 
 #order,
 #contact {
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para aumentar a visibilidade do texto */
-    padding: 20px 10px; /* Alterado para layout original */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo escuro para aumentar a visibilidade do texto */
+    padding: 20px 10px;
+    /* Alterado para layout original */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 0 auto; /* Centraliza */
-    width: 80%; /* Largura reduzida para layout original */
+    margin: 0 auto;
+    /* Centraliza */
+    width: 80%;
+    /* Largura reduzida para layout original */
 }
 
 #order h2,
 #contact h2 {
-    color: #ffffff; /* Cor mais clara para os títulos */
+    color: #ffffff;
+    /* Cor mais clara para os títulos */
 }
 
 #order form,
@@ -226,6 +253,7 @@ footer nav ul li a {
     padding: 15px;
     border-radius: 5px;
     text-align: left;
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -278,6 +306,7 @@ form#payment-form {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 0 auto;
+    color: black;
 }
 
 form#payment-form label,
@@ -348,7 +377,8 @@ form#payment-form div {
 .payment-button {
     position: relative;
     display: inline-block;
-    background-color: #007BFF; /* Cor padrão do botão */
+    background-color: #007BFF;
+    /* Cor padrão do botão */
     color: white;
     padding: 15px 30px;
     font-size: 16px;
@@ -359,17 +389,21 @@ form#payment-form div {
 }
 
 .payment-button:hover {
-    background-color: #0056b3; /* Cor do botão quando hover */
+    background-color: #0056b3;
+    /* Cor do botão quando hover */
 }
 
 input[type="radio"] {
-    display: none; /* Esconde os botões de rádio padrão */
+    display: none;
+    /* Esconde os botões de rádio padrão */
 }
 
-input[type="radio"] + label {
+input[type="radio"]+label {
     display: inline-block;
-    background-color: #f0f0f0; /* Cor do botão */
-    color: #333; /* Cor do texto */
+    background-color: #f0f0f0;
+    /* Cor do botão */
+    color: #333;
+    /* Cor do texto */
     padding: 10px 20px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -377,6 +411,81 @@ input[type="radio"] + label {
     transition: background-color 0.3s ease;
 }
 
-input[type="radio"]:checked + label {
-    background-color: #0056b3; /* Muda a cor do botão quando selecionado */
+input[type="radio"]:checked+label {
+    background-color: #0056b3;
+    /* Muda a cor do botão quando selecionado */
+}
+
+#customer-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#customer-info h2 {
+    margin-bottom: 15px;
+}
+
+
+#order-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#order-box h2 {
+    margin-bottom: 15px;
+}
+
+#delivery-status {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#delivery-status h2 {
+    margin-bottom: 15px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    /* Espaçamento interno para melhor visibilidade */
+    border-radius: 20px;
+    /* Cria o fundo curvado */
+}
+
+.status-item span {
+    font-size: 1.5em;
+}
+
+.status-preparo {
+    background-color: #16e647;
+    /* Verde claro */
+}
+
+.status-rota,
+.status-entregue {
+    background-color: #e0e0e0;
+    /* Cinza claro mais escuro */
+}
+
+.status-icon {
+    width: auto;
+    height: 1.5em;
+    margin-right: 15px;
 }

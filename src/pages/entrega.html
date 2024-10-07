@@ -14,6 +14,12 @@
         <div class="container">
             <h1>CodeBite Restaurant - Entrega</h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="/src/home.html">Menu Principal</a></li>
+            </ul>
+        </nav>
+
     </header>
 
     <main>
@@ -29,23 +35,32 @@
         </section>
 
         <!-- Resumo do Pedido -->
-        <section id="order-summary">
-            <div class="titulo">
-                <h2>Resumo do Pedido</h2>
-            </div>
-            <!-- O conteúdo do resumo do pedido será carregado pelo script -->
-        </section>
+        <section id="order-box">
+            <h2>Itens do Pedido</h2>
+            <section id="order-summary">
+                <div class="titulo">
+                    <h2>Resumo do Pedido</h2>
+                </div>
+                <!-- O conteúdo do resumo do pedido será carregado pelo script -->
+            </section>
 
+        </section>
         <!-- Status da Entrega -->
-        <section id="delivery-status">
+        <div id="delivery-status" class="status-container">
             <h2>Status da Entrega</h2>
-            <div class="status-options">
-                <div class="status-box">Em Preparo</div>
-                <div class="status-box">Em Rota</div>
-                <div class="status-box">Entregue</div>
+            <div class="status-item">
+                <img src="/src/images/icons/ico_preparo.png" alt="Em Preparo" class="status-icon">
+                <span>Em Preparo</span>
             </div>
-        </section>
-
+            <div class="status-item">
+                <img src="/src/images/icons/ico_delivery.png" alt="Em Rota" class="status-icon">
+                <span>Em Rota</span>
+            </div>
+            <div class="status-item">
+                <img src="/src/images/icons/ico_entregue.png" alt="Entregue" class="status-icon">
+                <span>Entregue</span>
+            </div>
+        </div>
 
     </main>
 
