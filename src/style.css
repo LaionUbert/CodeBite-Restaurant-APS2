@@ -162,25 +162,32 @@ button:hover {
     margin-bottom: 40px;
 }
 
+#menu h2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #order,
 #contact {
     background-color: rgba(0, 0, 0, 0.7);
-    /* Fundo escuro para aumentar a visibilidade do texto */
     padding: 20px 10px;
-    /* Alterado para layout original */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 0 auto;
-    /* Centraliza */
     width: 80%;
-    /* Largura reduzida para layout original */
 }
 
 #order h2,
 #contact h2 {
     color: #ffffff;
-    /* Cor mais clara para os títulos */
 }
 
 #order form,
@@ -378,7 +385,6 @@ form#payment-form div {
     position: relative;
     display: inline-block;
     background-color: #007BFF;
-    /* Cor padrão do botão */
     color: white;
     padding: 15px 30px;
     font-size: 16px;
@@ -390,20 +396,16 @@ form#payment-form div {
 
 .payment-button:hover {
     background-color: #0056b3;
-    /* Cor do botão quando hover */
 }
 
 input[type="radio"] {
     display: none;
-    /* Esconde os botões de rádio padrão */
 }
 
 input[type="radio"]+label {
     display: inline-block;
     background-color: #f0f0f0;
-    /* Cor do botão */
     color: #333;
-    /* Cor do texto */
     padding: 10px 20px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -413,7 +415,6 @@ input[type="radio"]+label {
 
 input[type="radio"]:checked+label {
     background-color: #0056b3;
-    /* Muda a cor do botão quando selecionado */
 }
 
 #customer-info {
@@ -464,9 +465,7 @@ input[type="radio"]:checked+label {
     align-items: center;
     margin-bottom: 15px;
     padding: 10px 20px;
-    /* Espaçamento interno para melhor visibilidade */
     border-radius: 20px;
-    /* Cria o fundo curvado */
 }
 
 .status-item span {
@@ -475,13 +474,11 @@ input[type="radio"]:checked+label {
 
 .status-preparo {
     background-color: #16e647;
-    /* Verde claro */
 }
 
 .status-rota,
 .status-entregue {
     background-color: #e0e0e0;
-    /* Cinza claro mais escuro */
 }
 
 .status-icon {
