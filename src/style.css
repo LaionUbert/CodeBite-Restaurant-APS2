@@ -31,15 +31,19 @@ body {
 
 /* Estilos do Header e Navbar */
 header {
-    background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%);
-    color: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 40px 20px;
     text-align: center;
+    background-color: transparent; /* Removido fundo azul */
 }
 
-h1 {
+.logo {
     margin-bottom: 20px;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 200px; /* Limitar a largura máxima */
+    height: auto; /* Manter a proporção */
 }
 
 nav {
@@ -51,7 +55,6 @@ nav ul {
     justify-content: center;
     list-style: none;
     flex-wrap: wrap;
-    /* Permite que os itens quebrem de linha */
 }
 
 nav ul li {
@@ -62,7 +65,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 15px;
-    background-color: #0000003f;
+    background-color: #131212d5;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
@@ -77,19 +80,12 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        /* Organiza os itens em uma pilha */
         align-items: center;
     }
 
     nav ul li {
         margin: 10px 0;
-        /* Margem entre os itens da pilha */
         margin-top: 25px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-        /* Reduz o tamanho do título em telas menores */
     }
 }
 

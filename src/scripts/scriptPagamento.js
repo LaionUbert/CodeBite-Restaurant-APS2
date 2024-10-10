@@ -83,35 +83,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500); // Aguarda 500ms antes do redirecionamento
   }
 
-  // Botão "Realizar Pedido" - Salva os dados e chama a função de redirecionamento
+  // Botão "Realizar Pedido" - Validação dos campos do formulário
   const placeOrderButton = document.getElementById("place-order");
   placeOrderButton &&
-    placeOrderButton.addEventListener("click", () => {
+    placeOrderButton.addEventListener("click", (event) => {
       event.preventDefault(); // Previne o comportamento padrão de submissão do formulário
 
       const nameInput = document.getElementById("nome-cliente");
       const addressInput = document.getElementById("endereco-cliente");
       const phoneInput = document.getElementById("telefone-cliente");
+      const cardNumberInput = document.getElementById("card-number");
+      const cardOwnerCpfInput = document.getElementById("card-owner-cpf");
+      const cardOwnerNameInput = document.getElementById("card-owner-name");
+      const cardCvvInput = document.getElementById("card-cvv");
 
-      if (!nameInput || !addressInput || !phoneInput) {
-        console.error("Element not found");
-        return;
-      }
-
-      const name = nameInput.value;
-      const address = addressInput.value;
-      const phone = phoneInput.value;
-
-      // Verificação básica se os campos estão preenchidos
-      if (!name || !address || !phone) {
+      // Verificação de campos obrigatórios
+      if (
+        !nameInput.value ||
+        !addressInput.value ||
+        !phoneInput.value ||
+        (cardInfoSection.style.display === "block" &&
+          (!cardNumberInput.value ||
+           !cardOwnerCpfInput.value ||
+           !cardOwnerNameInput.value ||
+           !cardCvvInput.value))
+      ) {
         alert("Por favor, preencha todos os campos obrigatórios.");
         return;
       }
 
       // Armazenar os dados no localStorage
-      localStorage.setItem("customerName", name);
-      localStorage.setItem("customerAddress", address);
-      localStorage.setItem("customerPhone", phone);
+      localStorage.setItem("customerName", nameInput.value);
+      localStorage.setItem("customerAddress", addressInput.value);
+      localStorage.setItem("customerPhone", phoneInput.value);
 
       // Obter a opção de pagamento selecionada
       const selectedPaymentMethod = Array.from(paymentMethodRadios).find(
