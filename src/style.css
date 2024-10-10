@@ -27,15 +27,41 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    
 }
 
 /* Estilos do Header e Navbar */
 header {
-    background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%);
+    background: linear-gradient(135deg, #23c1dd 0%, #3235b8 100%); 
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 20px; 
     border-bottom: 1px solid #ddd;
-    text-align: center;
+    text-align: center; 
+    position: relative; 
+    height: 200px;
+}
+
+header::before {
+    content: ""; 
+    background-image: url('images/logo.jpeg'); 
+    background-size: contain; 
+    background-position: left top; 
+    background-repeat: no-repeat; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 100%; 
+    z-index: -1; 
+    opacity: 0.3; 
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        height: 150px; 
+        padding: 20px; 
+    }
 }
 
 h1 {
@@ -51,7 +77,6 @@ nav ul {
     justify-content: center;
     list-style: none;
     flex-wrap: wrap;
-    /* Permite que os itens quebrem de linha */
 }
 
 nav ul li {
@@ -77,19 +102,16 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        /* Organiza os itens em uma pilha */
         align-items: center;
     }
 
     nav ul li {
         margin: 10px 0;
-        /* Margem entre os itens da pilha */
         margin-top: 25px;
     }
 
     h1 {
         font-size: 1.5em;
-        /* Reduz o tamanho do título em telas menores */
     }
 }
 
